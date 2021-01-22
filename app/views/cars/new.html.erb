@@ -1,0 +1,11 @@
+<h1>Make Car</h1>
+
+<%= form_for @car do |f| %>
+<%= f.label "Make: " %>
+<%= f.text_field :make %> <br>
+<%= f.label "Name: " %>
+<%= f.text_field :name %> <br>
+<%= f.label "Engine Manufacturer: " %>
+<%= f.text_field :engine_manufacturer %> <br>
+<%= f.submit "Add Cars" %>
+<%end%>

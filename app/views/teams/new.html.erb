@@ -1,0 +1,13 @@
+<h1>New Team</h1>
+
+<%= form_for @team do |f| %>
+<%= f.label "Name: " %>
+<%= f.text_field :name %> <br>
+<%= f.label "Country: " %>
+<%= f.text_field :country %> <br>
+<%= f.label "Championships: " %>
+<%= f.text_field :championships%> <br>
+ <%= f.label "Year Founded: " %>
+<%= f.text_field :year_founded%> <br>
+<%= f.submit "Add Team" %>
+<%end%>
