@@ -1,10 +1,13 @@
 class TeamsController < ApplicationController
   def new
     @team = Team.new
+    @team.cars.build
+    @team.drivers.build
   end
 
   def create
     @team =  Team.new(team_params)
+    byebug
     if @team.save
       redirect team_path
     else 

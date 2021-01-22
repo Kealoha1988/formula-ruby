@@ -1,12 +1,14 @@
 class OwnersController < ApplicationController
   def new
     @owner = Owner.new
+    @owner.build_team
   end
 
   def create
     @owner = Owner.new(owner_params)
+    #byebug
     if @owner.save
-      redirect_to owners_path
+      redirect_to @owner
     else 
       render :new
     end
@@ -44,7 +46,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params.require(:owner).permit(:name, :country)
+    params.require(:owner).permit(:name, :country, team_attributes: [:name, :country, :championships, :year_founded])
   end
 
 end

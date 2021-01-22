@@ -1,9 +1,24 @@
 <h1>New Owner</h1>
 
 <%= form_for @owner do |f| %>
-<%= f.label "Name: " %>
-<%= f.text_field :name %> <br>
-<%= f.label "Country: " %>
+<%= f.label "Owner Name: " %>
+<%= f.text_field :name %> 
+<%= f.label "Owner Nationality: " %>
 <%= f.text_field :country %> <br>
+</br>
+</br>
+<h3>Team Info</h3>
+<%= f.fields_for :team, Team.new do |t| %>
+    <%= t.label "Name: "%>
+    <%= t.text_field :name %>
+    <%= t.label "Country: "%>
+    <%= t.text_field :country %>
+    <%= t.label "Total Championships: "%>
+    <%= t.text_field :championships %>
+    <%= t.label "Year Founded: "%>
+    <%= t.text_field :year_founded %>
+    <% end %>
+</br>
+</br>
 <%= f.submit "Add Owner" %>
-<%end%>
+<% end %>
